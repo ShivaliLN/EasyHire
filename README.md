@@ -2,7 +2,7 @@
 
 ## Overview
 
-**TaskComrade** is the first fully decentralized platform to connect people in need of help with local Taskers.
+**EasyHire** is the first fully decentralized platform to connect people in need of help with local Taskers.
 TaskComrade allows any individual to create their profile and list down the task(s) that they are best at and their hourly rate for the task completion. Users can search for taskers in their local area and hire them.
 
 1. As a **tasker**, you can get paid to what you love, when and where you want.
@@ -12,7 +12,7 @@ TaskComrade allows any individual to create their profile and list down the task
 
 My project is inspired by web2 platform TaskRabbit but with improvements and extended scope in this web3 version.
 
-## TaskComrade Benefits (Web3 vs Web2)
+## EasyHire Benefits (Web3 vs Web2)
 
 1. Scope extended to use platform for hiring in any area like smart contract developer, frontend developer, cleaning, handy services with ability to upload your resume on IPFS.
 2. Payments are made in crypto using Superfluid streams, so you pay/get paid for each second you worked. No guessing or recording time spent.
@@ -49,8 +49,7 @@ My project is inspired by web2 platform TaskRabbit but with improvements and ext
 TaskComrade Architecture
 
 - **Smart Contract**
-  Deployed on **Polygon Mumbai testnest**, the TaskComrade allows tasker to register and deposit a certain amount of registration fees.
-  TaskComrade deployed at: https://mumbai.polygonscan.com/address/0xeF36aF570B566C05a52759C8628df288F997f62C
+ 
 
 - **IPFS/Filecoin**
 
@@ -100,7 +99,7 @@ TaskComrade Architecture
 
 ## Challenges I ran into
 
-- I am more of a backend developer attempting frontend. So, it was little challenging to build the UI but I got to learn a lot in the process.
+-
 
 ## Accomplishments that I am proud of
 
@@ -115,8 +114,7 @@ TaskComrade Architecture
 
 **GitHub links**
 
-- TaskComrade UI -> https://github.com/ShivaliLN/TaskComrade.git
-- TaskComrade Contract -> https://github.com/ShivaliLN/TaskComradeContract.git
+- 
 
 ## Roadmap
 
@@ -125,4 +123,4 @@ TaskComrade Architecture
 
 ## dApp hosted here
 
-https://hqxotfxpqma0.usemoralis.com
+
