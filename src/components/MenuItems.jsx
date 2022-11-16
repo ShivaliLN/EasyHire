@@ -32,7 +32,7 @@ function MenuItems() {
         <NavLink to="/dashboard">🔲 My Dashboard</NavLink>
       </Menu.Item>
       <Menu.Item key="/support">
-        <NavLink to="/support">✉ EPNS Inbox</NavLink>
+        <NavLink to="/support">✉ Push Inbox</NavLink>
       </Menu.Item>
       <Menu.Item key="/superfluidConsole">
         <NavLink to="/superfluidConsole">💻 Superfluid Console</NavLink>

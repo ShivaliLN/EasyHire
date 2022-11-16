@@ -14,7 +14,7 @@ import React, { useState } from "react";
 import { Moralis } from "moralis";
 import * as EpnsAPI from "@epnsproject/sdk-restapi";
 import * as ethers from "ethers";
-import taskComrade from "./TaskComrade.json";
+import easyHire from "./EasyHire.json";
 ///import { ConstantFlowAgreementV1 } from "@superfluid-finance/sdk-core";
 import Record from "./privateKey.json";
 
@@ -160,7 +160,7 @@ export default function Tasker() {
       const apiResponse = await EpnsAPI.channels.subscribe({
         signer: signer2,
         channelAddress:
-          "eip155:80001:0x861CadB50533f288313207a140A107E8AD9EE8c6", // channel address in CAIP
+          "eip155:80001:0xf8b638379a718fAEd50e91DFC03bE429006c69A2", // channel address in CAIP
         userAddress: `eip155:80001:${tasker}`, // user address in CAIP
         onSuccess: () => {
           console.log("opt in success");
@@ -176,7 +176,7 @@ export default function Tasker() {
       //Notificatio to creator that profile created
       sendNotification(
         "Profile Created",
-        "Hello! Welcome to TaskComrade. Your profile has been created. Now you can earn money your way. Thank you",
+        "Hello! Welcome to EasyHire. Your profile has been created. Now you can earn money your way. Thank you",
         tasker,
       );
     } catch (err) {
@@ -200,8 +200,8 @@ export default function Tasker() {
           cta: "",
           img: "",
         },
-        recipients: `eip155:42:${tasker}`, //"eip155:42:0x98A45694db06aefAE904421597b62F5AE3bF0De8", // recipient address
-        channel: "eip155:42:0x861CadB50533f288313207a140A107E8AD9EE8c6", // your channel address
+        recipients: `eip155:80001:${tasker}`, //"eip155:42:0x98A45694db06aefAE904421597b62F5AE3bF0De8", // recipient address
+        channel: "eip155:80001:0x861CadB50533f288313207a140A107E8AD9EE8c6", // your channel address
         env: "staging",
       });
 
@@ -271,8 +271,8 @@ export default function Tasker() {
     console.log("here");
 
     const contract = new ethers.Contract(
-      "0xeF36aF570B566C05a52759C8628df288F997f62C",
-      taskComrade.abi,
+      "0xAc729AC887Cad2D5134D25d256416318af44E10b",
+      easyHire.abi,
       signer2,
     );
     try {
@@ -309,7 +309,7 @@ export default function Tasker() {
             <div style={{ textAlign: "center" }}>
               {" "}
               <Image
-                alt="TaskComrade Logo"
+                alt="EasyHire Logo"
                 width={150}
                 height={150}
                 src="logo.png"
@@ -456,12 +456,6 @@ export default function Tasker() {
         <input type="file" name="file" id="file1" /> <br />
         {values1.message1}
         <br />
-        <br />
-        <Text strong>
-          🔔 We don't need your email or phone number as all communication will
-          happen via EPNS. You will be prompted to 'Opt-in' the TaskComrade
-          channel to receive notifications.
-        </Text>
         <br />
         <br />
         <Button type="primary" onClick={createProfile}>

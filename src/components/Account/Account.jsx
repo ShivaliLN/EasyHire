@@ -87,7 +87,7 @@ function Account() {
                   try {
                     await authenticate({
                       provider: connectorId,
-                      signingMessage: "TaskComrade Terms & Conditions!",
+                      signingMessage: "EasyHire Terms & Conditions!",
                     });
                     window.localStorage.setItem("connectorId", connectorId);
                     setIsAuthModalVisible(false);

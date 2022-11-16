@@ -186,8 +186,8 @@ export default function Client() {
           cta: "",
           img: "",
         },
-        recipients: `eip155:42:${tasker}`, //"eip155:42:0x98A45694db06aefAE904421597b62F5AE3bF0De8", // recipient address
-        channel: "eip155:42:0x861CadB50533f288313207a140A107E8AD9EE8c6", // your channel address
+        recipients: `eip155:80001:${tasker}`, //"eip155:42:0x98A45694db06aefAE904421597b62F5AE3bF0De8", // recipient address
+        channel: "eip155:80001:0xf8b638379a718fAEd50e91DFC03bE429006c69A2", // your channel address
         env: "staging",
       });
 
@@ -236,8 +236,8 @@ export default function Client() {
           cta: "",
           img: "",
         },
-        recipients: `eip155:42:${tasker}`, //"eip155:42:0x98A45694db06aefAE904421597b62F5AE3bF0De8", // recipient address
-        channel: "eip155:42:0x861CadB50533f288313207a140A107E8AD9EE8c6", // your channel address
+        recipients: `eip155:80001:${tasker}`, //"eip155:42:0x98A45694db06aefAE904421597b62F5AE3bF0De8", // recipient address
+        channel: "eip155:80001:0xf8b638379a718fAEd50e91DFC03bE429006c69A2", // your channel address
         env: "staging",
       });
 
@@ -264,7 +264,7 @@ export default function Client() {
             <div style={{ textAlign: "center" }}>
               {" "}
               <Image
-                alt="TaskComrade Logo"
+                alt="EasyHire Logo"
                 width={150}
                 height={150}
                 src="logo.png"
@@ -317,7 +317,7 @@ export default function Client() {
           </Form.Item>
           <br />
           <Text strong>
-            🔔 You will be prompted to 'Opt-in' the TaskComrade channel to
+            🔔 You will be prompted to 'Opt-in' the EasyHire channel to
             receive notifications.
           </Text>
           <br />
@@ -365,7 +365,7 @@ export default function Client() {
                     <Meta
                       // avatar={tasker.avatar}
                       title={tasker.title}
-                      //description={tasker.category}
+                    //description={tasker.category}
                     />
                   </Text>
                   <p>{tasker.rating}</p>

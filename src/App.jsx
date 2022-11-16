@@ -14,14 +14,14 @@ import "./style.css";
 //import ContractInfo from "components/ContractInfo";
 
 import About from "components/About";
-/*
+
 import SuperfluidConsole from "components/SuperfluidConsole";
 import Tasker from "components/Tasker";
 
 import Client from "components/Client";
 import Dashboard from "components/Dashboard";
 import Support from "components/Support";
-*/
+
 import Text from "antd/lib/typography/Text";
 import MenuItems from "./components/MenuItems";
 const { Header, Footer } = Layout;
@@ -97,7 +97,21 @@ const App = ({ isServerInfo }) => {
             <Route exact path="/about">
               <About isServerInfo={isServerInfo} />
             </Route>
-
+            <Route path="/tasker">
+              <Tasker />
+            </Route>
+            <Route path="/client">
+              <Client />
+            </Route>
+            <Route path="/dashboard">
+              <Dashboard />
+            </Route>
+            <Route path="/support">
+              <Support />
+            </Route>
+            <Route path="/superfluidConsole">
+              <SuperfluidConsole />
+            </Route>
             <Route path="/">
               <Redirect to="/about" />
             </Route>
