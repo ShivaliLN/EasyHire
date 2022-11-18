@@ -13,7 +13,7 @@ import "antd/dist/antd.css";
 import "./style.css";
 //import ContractInfo from "components/ContractInfo";
 
-import About from "components/About";
+//import About from "components/About";
 
 import SuperfluidConsole from "components/SuperfluidConsole";
 import Tasker from "components/Tasker";
@@ -94,8 +94,8 @@ const App = ({ isServerInfo }) => {
 
         <div style={styles.content}>
           <Switch>
-            <Route exact path="/about">
-              <About isServerInfo={isServerInfo} />
+            <Route exact path="/tasker">
+              <Tasker isServerInfo={isServerInfo} />
             </Route>
             <Route path="/tasker">
               <Tasker />
@@ -113,10 +113,10 @@ const App = ({ isServerInfo }) => {
               <SuperfluidConsole />
             </Route>
             <Route path="/">
-              <Redirect to="/about" />
+              <Redirect to="/tasker" />
             </Route>
             <Route path="/ethereum-boilerplate">
-              <Redirect to="/about" />
+              <Redirect to="/tasker" />
             </Route>
             <Route path="/nonauthenticated">
               <>Please login using the "Authenticate" button</>
