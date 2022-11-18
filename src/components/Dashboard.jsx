@@ -16,6 +16,7 @@ import { Moralis } from "moralis";
 import * as EpnsAPI from "@epnsproject/sdk-restapi";
 import * as ethers from "ethers";
 import Record from "./privateKey.json";
+import easyHire from "./EasyHire.json";
 import abi_ERC20 from "./erc20";
 import { Framework } from "@superfluid-finance/sdk-core";
 
@@ -51,9 +52,13 @@ let rate = [];
 let payment = [];
 
 var PK;
+var jsonRPC;
+var PK2;
 {
   Record.map((record) => {
     PK = record.epnsPrivateKey; // channel private key
+    jsonRPC = record.jsonRPC;
+    PK2 = record.PK;
   });
 }
 const Pkey = `0x${PK}`;
@@ -505,6 +510,9 @@ export default function Dashboard() {
       _body =
         "Tasker has confirmed for your job and will be available at the date/time mentioned in the description. Thank You";
 
+      //Generate OTP
+      getOTP();
+
       object.set("Confirmed", true);
 
       //Also create entry in ConfirmedJobs
@@ -566,13 +574,74 @@ export default function Dashboard() {
     }
   };
 
+  const getOTP = async () => {
+    openMessage()
+
+    //smart contract call
+    const provider = new ethers.providers.JsonRpcProvider(jsonRPC);
+    const signer = new ethers.Wallet(PK2, provider);
+
+    console.log("sc call");
+    const contract = new ethers.Contract(
+      "0xAc729AC887Cad2D5134D25d256416318af44E10b",
+      easyHire.abi,
+      signer,
+    );
+    try {
+      const transaction = await contract
+        .connect(signer)
+        .requestRandomWords({
+          gasLimit: 4500000,
+        });
+      console.log(transaction.hash);
+      await transaction.wait().then(() => {
+        console.log("Smart Contract called");
+      });
+    } catch (e) {
+      message.error({
+        content: "Error in sc call",
+        key,
+        duration: 3,
+      });
+    }
+  };
+
+
   const GenerateOTP = async (tasker) => {
     openMessage2();
     console.log(tasker);
     console.log(tasker);
 
-    //Generate OTP
-    const otpSend = Math.floor(Math.random() * 10 + 1);
+    //Get LastRequest
+    //ReadOTP
+    //getOTP
+    var otpSend;   //= Math.floor(Math.random() * 10 + 1);
+
+    const provider = new ethers.providers.JsonRpcProvider(jsonRPC);
+    const signer = new ethers.Wallet(PK2, provider);
+
+    console.log("sc call");
+    const contract = new ethers.Contract(
+      "0xAc729AC887Cad2D5134D25d256416318af44E10b",
+      easyHire.abi,
+      signer,
+    );
+    try {
+      const lastRequestId = await contract
+        .lastRequestId();
+      console.log("lastRequestId" + lastRequestId);
+
+      otpSend = await contract
+        .getOTP(lastRequestId);
+      console.log("otpSend" + otpSend);
+
+    } catch (e) {
+      message.error({
+        content: "Error in lastRequestId",
+        key,
+        duration: 3,
+      });
+    }
 
     //Save OTP on table
     const account = await Moralis.account;
@@ -675,7 +744,7 @@ export default function Dashboard() {
       // Write operations
 
       const createFlowOperation = sf.cfaV1.createFlow({
-        sender: "0x98A45694db06aefAE904421597b62F5AE3bF0De8",
+        sender: "0xad9E7F02660E638B8573720bc698f2b7Eda0ade9", // "0x98A45694db06aefAE904421597b62F5AE3bF0De8",
         receiver: tasker, //"0xC29942DE1Aefb0a0DDEb5B2F1cA34E96BDB516B6",
         superToken: "0x5D8B4C2554aeB7e86F387B4d6c00Ac33499Ed01f",
         flowRate: BigInt(flowrate), //"53583676268",

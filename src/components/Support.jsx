@@ -16,7 +16,7 @@ export default function Support() {
         user: `eip155:80001:${account}`, // user address in CAIP
         env: "staging",
       });
-      console.log(notifications);
+      //console.log(notifications);
       setNotifications(notifications);
     }
     fetchData();
@@ -58,7 +58,7 @@ export default function Support() {
             url={url}
             notification={notification}
             chainName={blockchain}
-            // chainName={blockchain as chainNameType} // if using Typescript
+          // chainName={blockchain as chainNameType} // if using Typescript
           />
         );
       })}
