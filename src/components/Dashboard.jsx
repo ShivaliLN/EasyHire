@@ -575,7 +575,7 @@ export default function Dashboard() {
   };
 
   const getOTP = async () => {
-    openMessage()
+    openMessage();
 
     //smart contract call
     const provider = new ethers.providers.JsonRpcProvider(jsonRPC);
@@ -588,11 +588,9 @@ export default function Dashboard() {
       signer,
     );
     try {
-      const transaction = await contract
-        .connect(signer)
-        .requestRandomWords({
-          gasLimit: 4500000,
-        });
+      const transaction = await contract.connect(signer).requestRandomWords({
+        gasLimit: 4500000,
+      });
       console.log(transaction.hash);
       await transaction.wait().then(() => {
         console.log("Smart Contract called");
@@ -606,7 +604,6 @@ export default function Dashboard() {
     }
   };
 
-
   const GenerateOTP = async (tasker) => {
     openMessage2();
     console.log(tasker);
@@ -615,7 +612,7 @@ export default function Dashboard() {
     //Get LastRequest
     //ReadOTP
     //getOTP
-    var otpSend;   //= Math.floor(Math.random() * 10 + 1);
+    var otpSend; //= Math.floor(Math.random() * 10 + 1);
 
     const provider = new ethers.providers.JsonRpcProvider(jsonRPC);
     const signer = new ethers.Wallet(PK2, provider);
@@ -627,14 +624,11 @@ export default function Dashboard() {
       signer,
     );
     try {
-      const lastRequestId = await contract
-        .lastRequestId();
+      const lastRequestId = await contract.lastRequestId();
       console.log("lastRequestId" + lastRequestId);
 
-      otpSend = await contract
-        .getOTP(lastRequestId);
+      otpSend = await contract.getOTP(lastRequestId);
       console.log("otpSend" + otpSend);
-
     } catch (e) {
       message.error({
         content: "Error in lastRequestId",

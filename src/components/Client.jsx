@@ -317,8 +317,8 @@ export default function Client() {
           </Form.Item>
           <br />
           <Text strong>
-            🔔 You will be prompted to 'Opt-in' the EasyHire channel to
-            receive notifications.
+            🔔 You will be prompted to 'Opt-in' the EasyHire channel to receive
+            notifications.
           </Text>
           <br />
           <br />
@@ -365,7 +365,7 @@ export default function Client() {
                     <Meta
                       // avatar={tasker.avatar}
                       title={tasker.title}
-                    //description={tasker.category}
+                      //description={tasker.category}
                     />
                   </Text>
                   <p>{tasker.rating}</p>

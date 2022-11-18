@@ -50,16 +50,20 @@ My project is inspired by web2 platform TaskRabbit but with improvements and ext
 EasyHire Architecture
 
 - **Smart Contract**
- Using **Remix** smart contract is deployed on Polygon mumbai testnet
- https://mumbai.polygonscan.com/address/0xAc729AC887Cad2D5134D25d256416318af44E10b
+  Using **Remix** smart contract is deployed on Polygon mumbai testnet
+  https://mumbai.polygonscan.com/address/0xAc729AC887Cad2D5134D25d256416318af44E10b
 
 - **IPFS/Filecoin**
 
   - All the tasker photos are stored on IPFS and the IPFS hash are stored on the table to display the images on runtime when the user searches for the tasker.
   - The supporting documents are also uploaded to IPFS using Moralis saveIPFS() method. The link to these documents are available in the tasker profile display and users can click on them to view the content.
 
+- **Chainlink VRF**
+
+  - The One-time-password (OTP) is used to start and stop the superfluid payment service. This OTP is generated using Chainlink VRF V2 subscription menthod.
+
 - **Push Protocol**
- 
+
   - There is an Push Inbox tab in the dApp to integrate the UI for convenience.
   - When the tasker creates the profile they are automatically prompted to 'Opt-in' the channel
   - When the user first contacts the tasker they are automatically prompted to 'Opt-in' the channel
@@ -107,5 +111,5 @@ EasyHire Architecture
 - Add payment in other tokens
 
 ## dApp hosted here
-https://hqxotfxpqma0.usemoralis.com
 
+https://hqxotfxpqma0.usemoralis.com

@@ -48,7 +48,6 @@ export default function About() {
         }
       >
         <Text strong>EasyHire</Text>
-
       </Card>
     </div>
   );

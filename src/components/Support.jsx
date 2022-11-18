@@ -58,7 +58,7 @@ export default function Support() {
             url={url}
             notification={notification}
             chainName={blockchain}
-          // chainName={blockchain as chainNameType} // if using Typescript
+            // chainName={blockchain as chainNameType} // if using Typescript
           />
         );
       })}
