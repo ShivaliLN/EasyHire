@@ -19,9 +19,10 @@ function MenuItems() {
       }}
       defaultSelectedKeys={[pathname]}
     >
+      {/** 
       <Menu.Item key="/about">
         <NavLink to="/about">🛠 About EasyHire</NavLink>
-      </Menu.Item>
+      </Menu.Item>*/}
       <Menu.Item key="/tasker">
         <NavLink to="/Tasker">👩‍🔧 Become a Tasker</NavLink>
       </Menu.Item>
